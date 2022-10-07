@@ -19,9 +19,10 @@
                 <th class="tg-0pky">ID</th>
                 <th class="tg-0pky">Brand</th>
                 <th class="tg-0lax">Model</th>
-                <th class="tg-0lax">Plate</th>
+                <th class="tg-0lax">Plate number</th>
                 <th class="tg-0lax">Year</th>
                 <th class="tg-0lax">Color</th>
+                <th class="tg-0lax">Actions</th>
             </tr>
         </thead>
         <tbody>
