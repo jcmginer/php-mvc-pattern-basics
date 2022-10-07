@@ -21,7 +21,7 @@ class Database
     {
         try {
             $connection = "mysql:host=" . HOST . ";"
-                . "dbname=" . DB . ";"
+                . "dbName=" . DB . ";"
                 . "user=" . USER . ";"
                 . "password=" . PASSWORD . ";"
                 . "charset=" . CHARSET;
