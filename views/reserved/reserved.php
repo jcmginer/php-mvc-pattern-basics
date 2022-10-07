@@ -26,14 +26,14 @@
                 <div class="col">
                     <div class="form-group">
                         <label for="brand">Brand</label>
-                        <input required type="text" value="<?php echo isset($this->data['brand']) ? $this->data['brand'] : null ?>" class="form-control" id="name" name="brand" aria-describedby="brand" placeholder="Enter brand">
+                        <input required type="text" value="<?php echo isset($this->data['brand']) ? $this->data['brand'] : null ?>" class="form-control" id="brand" name="brand" aria-describedby="brand" placeholder="Enter brand">
                     </div>
 
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <label for="brand">Model</label>
-                        <input required type="text" value="<?php echo isset($this->data['model']) ? $this->data['model'] : null ?>" class="form-control" id="lastName" name="model" aria-describedby="lastnameHelp" placeholder="Enter last name">
+                        <label for="model">Model</label>
+                        <input required type="text" value="<?php echo isset($this->data['model']) ? $this->data['model'] : null ?>" class="form-control" id="model" name="model" aria-describedby="modelHelp" placeholder="Enter model">
                     </div>
                 </div>
             </div>
@@ -41,9 +41,9 @@
             <div class="form-row">
                 <div class="col">
                     <div class="form-group">
-                        <label for="exampleInputPlate1">Plate</label>
-                        <input required type="text" value="<?php echo isset($this->data['plate']) ? $this->data['plate'] : null ?>" class="form-control" id="plate" name="plate" aria-describedby="plateHelp" placeholder="Enter plate">
-                        <small id="plateHelp" class="form-text text-muted">We'll never share your plate with anyone else.</small>
+                        <label for="exampleInputPlate1">Plate number</label>
+                        <input required type="text" value="<?php echo isset($this->data['plate']) ? $this->data['plate'] : null ?>" class="form-control" id="plate" name="plate" aria-describedby="plateHelp" placeholder="Enter plate number">
+                        <small id="plateHelp" class="form-text text-muted">We'll never share your plate number with anyone else.</small>
                     </div>
                 </div>
             </div>

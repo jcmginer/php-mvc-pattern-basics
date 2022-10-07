@@ -5,7 +5,7 @@ class ReservedModel extends Model
     function get()
     {
         $query = $this->db->connect()->prepare("SELECT e.id, e.brand, e.model, e.plate, e.year, e.color
-        FROM reserveds e
+        FROM reserved e
         ORDER BY e.id ASC;");
 
         try {
@@ -20,7 +20,7 @@ class ReservedModel extends Model
     function getById($id)
     {
         $query = $this->db->connect()->prepare("SELECT id, brand, model, plate, year, color,
-        FROM reserveds e
+        FROM reserved e
         WHERE id = $id;");
 
         try {
@@ -34,7 +34,7 @@ class ReservedModel extends Model
 
     function create($reserved)
     {
-        $query = $this->db->connect()->prepare("INSERT INTO reserveds (brand, model, plate, year, color)
+        $query = $this->db->connect()->prepare("INSERT INTO reserved (brand, model, plate, year, color)
         VALUES
         (?, ?, ?, ?, ?);");
 
@@ -54,7 +54,7 @@ class ReservedModel extends Model
 
     function update($reserved)
     {
-        $query = $this->db->connect()->prepare("UPDATE reserveds
+        $query = $this->db->connect()->prepare("UPDATE reserved
         SET brand = ?, model = ?, plate = ?, year = ?, color = ?
         WHERE id = ?;");
 
@@ -63,6 +63,7 @@ class ReservedModel extends Model
         $query->bindParam(3, $reserved["plate"]);
         $query->bindParam(4, $reserved["year"]);
         $query->bindParam(5, $reserved["color"]);
+        $query->bindParam(6, $reserved["id"]);
 
         try {
             $query->execute();
@@ -74,7 +75,7 @@ class ReservedModel extends Model
 
     function delete($id)
     {
-        $query = $this->db->connect()->prepare("DELETE FROM reserveds WHERE id = ?");
+        $query = $this->db->connect()->prepare("DELETE FROM reserved WHERE id = ?");
         $query->bindParam(1, $id);
 
         try {

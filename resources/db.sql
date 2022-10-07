@@ -36,6 +36,6 @@ VALUES
 
 INSERT INTO reserved (brand, model, plate, year, color)
 VALUES
-("Audi", "RS6", "RS6AND", 2022, "Black"),
-("Honda", "S2000", "7072K", 2000, "Grey"),
-("BMW", "M3", "3456H", 2016, "Blue");
+("Toyota", "YarisGR", "8573L", 2022, "Black"),
+("Ford", "FocusRS", "9387J", 2017, "Orange"),
+("BMW", "M2", "9026L", 2021, "Green");

@@ -5,7 +5,7 @@ class SubscriberModel extends Model
     function get()
     {
         $query = $this->db->connect()->prepare("SELECT e.id, e.brand, e.model, e.plate, e.year, e.color
-        FROM subscribers e
+        FROM subscriber e
         ORDER BY e.id ASC;");
 
         try {
@@ -19,8 +19,8 @@ class SubscriberModel extends Model
 
     function getById($id)
     {
-        $query = $this->db->connect()->prepare("SELECT id, brand, model, plate, year, color,
-        FROM subscribers
+        $query = $this->db->connect()->prepare("SELECT id, brand, model, plate, year, color
+        FROM subscriber e
         WHERE id = $id;");
 
         try {
@@ -34,7 +34,7 @@ class SubscriberModel extends Model
 
     function create($subscriber)
     {
-        $query = $this->db->connect()->prepare("INSERT INTO subscribers (brand, model, plate, year, color)
+        $query = $this->db->connect()->prepare("INSERT INTO subscriber (brand, model, plate, year, color)
         VALUES
         (?, ?, ?, ?, ?);");
 
@@ -54,7 +54,7 @@ class SubscriberModel extends Model
 
     function update($subscriber)
     {
-        $query = $this->db->connect()->prepare("UPDATE subscribers
+        $query = $this->db->connect()->prepare("UPDATE subscriber
         SET brand = ?, model = ?, plate = ?, year = ?, color = ?
         WHERE id = ?;");
 
@@ -63,6 +63,7 @@ class SubscriberModel extends Model
         $query->bindParam(3, $subscriber["plate"]);
         $query->bindParam(4, $subscriber["year"]);
         $query->bindParam(5, $subscriber["color"]);
+        $query->bindParam(6, $subscriber["id"]);
 
         try {
             $query->execute();
@@ -74,7 +75,7 @@ class SubscriberModel extends Model
 
     function delete($id)
     {
-        $query = $this->db->connect()->prepare("DELETE FROM subscribers WHERE id = ?");
+        $query = $this->db->connect()->prepare("DELETE FROM subscriber WHERE id = ?");
         $query->bindParam(1, $id);
 
         try {
